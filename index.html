@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Глобальное потепление</title>
+    <style>
+        body {
+            font-family: Arial;
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        h1 {
+            font-size: 24px;
+        }
+        
+        form {
+            background: #f0f0f0;
+            padding: 15px;
+            margin: 20px 0;
+        }
+        
+        input {
+            padding: 5px;
+            width: 80px;
+            margin: 0 10px;
+        }
+        
+        button {
+            background: black;
+            color: white;
+            padding: 5px 15px;
+            border: none;
+            cursor: pointer;
+        }
+        
+        .info {
+            margin-top: 20px;
+            font-size: 12px;
+            color: gray;
+        }
+    </style>
+</head>
+<body>
+
+<h1>Глобальное потепление</h1>
+
+<form method="POST">
+    <label>С:</label>
+    <input type="number" name="start" value="{{start}}" min="1961" max="2019">
+    
+    <label>По:</label>
+    <input type="number" name="end" value="{{end}}" min="1961" max="2019">
+    
+    <button type="submit">Показать</button>
+</form>
+
+<div>
+    {{ graph|safe }}
+</div>
+
+<div class="info">
+    Данные: NASA / среднегодовая температура (1961-2019)
+</div>
+
+</body>
+</html>
